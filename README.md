@@ -1,8 +1,6 @@
-<center>
-
+<div align=center>
 # Documentation for TPM (Public_Trial)
-
-</center>
+</div>
 
 # Front Panel
 
