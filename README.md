@@ -20,9 +20,7 @@ This is the front panel *(demo)* of our Two Photon Microscope.
  - The bottom row is to monitor DMD status. The numbers in the red box should all be 0, otherwise the DMD is in wrong status. ***Progress bar*** indicates the percentage of patterns loaded.
 
 
-<center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/DMDerr.PNG" width="50%" height="50%" />
-</center>
+<div align=center><img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/DMDerr.PNG" width="50%" height="50%" /></div>
 
 
  - ***Stop*** button stops <**Projecting**> condition, ***Stop Imaging*** button stops <**Imaging**> condition. The ~~biiiiiiiiiiiiig~~ ***Quit*** button shutdowns the whole project when not in <**Imaging**> condition.
