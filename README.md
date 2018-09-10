@@ -4,8 +4,6 @@
 
 </center>
 
-[toc]
-
 # Front Panel
 
 This is the front panel *(demo)* of our Two Photon Microscope.
@@ -23,7 +21,7 @@ This is the front panel *(demo)* of our Two Photon Microscope.
 
 
 <center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/figures/master/kuang.PNG" width="50%" height="50%" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/DMDerr.PNG" width="50%" height="50%" />
 </center>
 
 
@@ -95,22 +93,22 @@ This program use first three frames to initialize the hardwares:
 ## Main Functions
 In the last frame of the sequence structure, two channels of analog signals from PMT are collected in the frequency of 80MHz. Data after calculation are transmitted in the frequency of 20KHz. This program also output a trigger rising edge for DMD in synchrony with data transmission.
 <center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/figures/master/%E5%B9%BB%E7%81%AF%E7%89%871.PNG" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/TPMworkflow.PNG" />
 </center>
 
 The data opration will not begin before receiving signal from the host. In the demo program, number **1** is set as the start signal. The signal receiving module is on the left of figure below:
 <center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/figures/master/hosttotarget.PNG" width="80%" height="80%"/>
+<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/hosttotarget.PNG" width="80%" height="80%"/>
 </center>
 
 Generate rising edge trigger for DMD.
 <center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/figures/master/trigger.PNG" width="80%" height="80%"/>
+<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/trigger.PNG" width="80%" height="80%"/>
 </center>
 
 The data acquisition, calculation, and transimission functions are realized below:
 <center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/figures/master/dataopration.PNG" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/FPGAdataoperation.PNG" />
 </center>
 
  - In the **red** circle, we extract **2048** data from **4k** data, set other data to **0**. When DMD changes pattern, it will go through some vibrations before becoming still, under which condition the data collected are not reliable.
