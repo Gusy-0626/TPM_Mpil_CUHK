@@ -4,7 +4,6 @@
 
 </div>
 
-[toc]
 # Notes
 Before reading this documentation, there are some materials recommended.
  - [Getting Started With LabVIEW FPGA](www.ni.com/tutorial/14532/en/)
