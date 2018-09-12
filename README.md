@@ -43,7 +43,6 @@ This is the front panel *(demo)* of our Two Photon Microscope.
 You can also see the functions of each module in the following table:
 
 <div align=center>
-
 |<div align=center>Block</div> | <div align=center>Function</div> |
 | -------- | -------- |
 |<div align=center>Image</div>     |<div align=center> *Image display*</div>    |
@@ -53,7 +52,6 @@ You can also see the functions of each module in the following table:
 |<div align=center>Loading Process</div>|<div align=center>*Display DMD holographic patterns loading process*</div>|
 |<div align=center>DMD Info</div>|<div align=center>*Determine if the DMD is loaded successfully.*</div>|
 |<div align=center>Raw Data</div>|<div align=center>*Display the raw data with an oscilloscope to find specimen*</div>|
-
 </div>
 
 # Execution Process
