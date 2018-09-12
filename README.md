@@ -22,6 +22,13 @@ This is the front panel of our Two Photon Microscope.
 
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/FrontPane1l.JPG">
 
+
+</div>
+
+<div align=center>
+
+<font size="2" font face="Times New Roman">Figure 1 Front Panel</font>
+
 </div>
 
  - Parameters such as scan ranges and steps are on the upright corner, which should be modified when condition is at <**No patterns**>. In general, **RangeX** should be less than $60\mu m$, **RangeY** should be less than $120\mu m$, while **StepX & StepY** be greater than $0.3\mu m$. The image resolution is calculated automatically.
@@ -34,6 +41,12 @@ This is the front panel of our Two Photon Microscope.
 <div align=center>
 
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/DMDerr.JPG" width="50%" height="50%" />
+
+</div>
+
+<div align=center>
+
+<font size="2" font face="Times New Roman">Figure 2 DMD Info</font>
 
 </div>
 
@@ -64,7 +77,7 @@ This project uses Labview to control the whole system.
 <div align=center>
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/State_Conditions.JPG" width="80%" height="80%"/>
 
-<font size="2" font face="Times New Roman">Figure2 Condition Control of the Front Block</font>
+<font size="2" font face="Times New Roman">Figure 3 Condition Control of the Front Block</font>
 </div>
 
 
@@ -72,10 +85,10 @@ This project uses Labview to control the whole system.
 <div align=center>
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Program_Flowchart.png" width="80%" height="80%"/>
 
-<font size="2" font face="Times New Roman">Figure 3 Flow chart of the state transitions</font>
+<font size="2" font face="Times New Roman">Figure 4 Flow chart of the state transitions</font>
 </div>
 
-In particular, in the Condition Control, we use the form of Figure 3 for state transitions:
+In particular, in the Condition Control, we use the form of Figure 4 for state transitions:
 
 
  - When the program starts running, it enters the <**No patterns**> state and waits. 
@@ -92,7 +105,7 @@ The FPGA program is a sequence structure consist of four frames.
 
 <div align=center>
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/fpga.png" alt="Figure4 Entire condition of FPGA program" />
-<font size="2" font face="Times New Roman">Figure 4 Entirety of FPGA program</font>
+<font size="2" font face="Times New Roman">Figure 5 Entirety of FPGA program</font>
 </div>
 
 ## FPGA Initialization
@@ -102,7 +115,7 @@ This program use first three frames to initialize the hardwares:
 <img src="https://raw.githubusercontent.com/chenbx996/Documentation/master/FPGA%20initialization1.png"/>
 <img src="https://raw.githubusercontent.com/chenbx996/Documentation/master/FPGA%20initialization2.png"/>
 <img src="https://raw.githubusercontent.com/chenbx996/Documentation/master/FPGA%20initialization3.png"/>
-<font size="2" font face="Times New Roman">Figure 5 Initialization of the hardwares</font>
+<font size="2" font face="Times New Roman">Figure 6 Initialization of the hardwares</font>
 </div>
 
 ## Main Functions
@@ -111,9 +124,21 @@ In the last frame of the sequence structure, two channels of analog signals from
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/TPMworkflow.PNG" />
 </div>
 
+<div align=center>
+
+<font size="2" font face="Times New Roman">Figure 7 FPGA to Host Flow Chart</font>
+
+</div>
+
 The data opration will not begin before receiving signal from the host. In this program, **Freqency Division**(typically 4k) and **Abandoned Number**(typically 800) are set as the start signal. The signal receiving module is on the left of figure below:
 <div align=center>
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/hosttotarget.PNG"/>
+</div>
+
+<div align=center>
+
+<font size="2" font face="Times New Roman">Figure 8 Data acquisition begin</font>
+
 </div>
 
 Generate rising edge trigger for DMD.
@@ -123,11 +148,23 @@ Generate rising edge trigger for DMD.
 
 </div>
 
+<div align=center>
+
+<font size="2" font face="Times New Roman">Figure 9 Rising edge trigger generation</font>
+
+</div>
+
 
 The data acquisition, calculation, and transimission functions are realized below:
 <div align=center>
 
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/FPGAdata_opration.JPG" />
+
+</div>
+
+<div align=center>
+
+<font size="2" font face="Times New Roman">Figure 10 Data operation in FPGA</font>
 
 </div>
 
@@ -146,7 +183,7 @@ Host Program is based on the Sequence Structure: **Parameters Initialization**, 
 
 <div align=center>
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/host_imaging.png" />
-<font size="2" font face="Times New Roman">Figure 6 Entirety of Host Program</font>
+<font size="2" font face="Times New Roman">Figure 11 Entirety of Host Program</font>
 </div>
 
 
@@ -160,7 +197,9 @@ Host Program is based on the Sequence Structure: **Parameters Initialization**, 
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Components_init.JPG" width="35%"/>
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/path_init.JPG" width="50%"" />
 
-<font size="2" font face="Times New Roman">Figure 7 Parameters Initialization</font>
+<font size="2" font face="Times New Roman">Figure 12 Parameters Initialization </font>
+
+
 
 </div>
 
@@ -177,8 +216,10 @@ There are 4 parts in this frame:
 
 <div align=center>
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/State_Change.JPG" />
-<font size="2" font face="Times New Roman">Figure 8 parameters setting</font>
+<font size="2" font face="Times New Roman">Figure 13 Parameters setting</font>
 </div>
+
+
 
 \
 In the main body, the program first confirm the condition, enable or disable the buttons and turn the LEDs of the conditions on or off. The specific process is listed as  fake codes:
@@ -242,9 +283,21 @@ It will be too hard to read if explaining every detail in this manual. So there 
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Producer.JPG" />
 </div>
 
+<div align=center>
+
+<font size="2" font face="Times New Roman">Figure 14 Producer Loop </font>
+
+</div>
+
 Simplified Chart：
 <div align=center>
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Producer_Chart.jpg" />
+</div>
+
+<div align=center>
+
+<font size="2" font face="Times New Roman">Figure 15 Producer Chart</font>
+
 </div>
 
 #### Consumer Loop
@@ -252,9 +305,21 @@ Simplified Chart：
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Consumer.JPG" />
 </div>
 
+<div align=center>
+
+<font size="2" font face="Times New Roman">Figure 16 Consumer Loop</font>
+
+</div>
+
 Simplified Chart：
 <div align=center>
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Consumer_Chart.jpg" />
+</div>
+
+<div align=center>
+
+<font size="2" font face="Times New Roman">Figure 17 Consumer Chart</font>
+
 </div>
 
 #### Error Check
@@ -262,11 +327,23 @@ Simplified Chart：
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Check.JPG" />
 </div>
 
+<div align=center>
+
+<font size="2" font face="Times New Roman">Figure 18 Error Check Loop</font>
+
+</div>
+
 The Error Check Loop is just to be rigorous.
 
 #### Separate Channel
 <div align=center>
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/New_Window.JPG" />
+</div>
+
+<div align=center>
+
+<font size="2" font face="Times New Roman">Figure 19 Separate Channel Loop</font>
+
 </div>
 
 This while loop is to control the window of separate-channel displaying. When ***New window*** button is clicked, there will be a new window screening two channels separately. The window will be closed when click the ***Stop*** button on the new window.
@@ -280,7 +357,7 @@ In other conditions such as <**No Sequence**> and <**Idle**>, the program only w
 <div align=center>
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Two_photon_imaging.png" />
 
-<font size="2" font face="Times New Roman">Figure 10 Principle of Two-Channel Pollen Imaging </font>
+<font size="2" font face="Times New Roman">Figure 20 Principle of Two-Channel Pollen Imaging </font>
 </div>
 
 Figure 10 shows the principle of the Two-Channel Pollen Imaging. The pollens put in a slide emit fluorescent after absorbing photon from laser. Fluorescent light is divided into 2 parts by wavelength. Each part is detected by a PMT. The data are input to the FPGA module and a figure then be obtained by Host Program.
@@ -288,21 +365,21 @@ Figure 10 shows the principle of the Two-Channel Pollen Imaging. The pollens put
 <div align=center>
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/DatabitFPGA.png" width="100%"/>
 
-<font size="2" font face="Times New Roman">Figure 11 Data type in two-channel pollen imaging </font>
+<font size="2" font face="Times New Roman">Figure 21 Data type in two-channel pollen imaging </font>
 </div>
 
 
 <div align=center>
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/RGBdata_storage.JPG" />
 
-<font size="2" font face="Times New Roman">Figure 12 IMAQ RGB division  with bytes </font>
+<font size="2" font face="Times New Roman">Figure 22 IMAQ RGB division  with bytes </font>
 </div>
 
 
 <div align=center>
 <img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Two_photon_imaging_program_structure.png" />
 
-<font size="2" font face="Times New Roman">Figure 12 Structure of Two-Channel Pollen Imaging Program</font>
+<font size="2" font face="Times New Roman">Figure 23 Structure of Two-Channel Pollen Imaging Program</font>
 </div>
 
 In the HostVI, the part of separated channel imaging is packed as a SubVI, and the two-channel image is shown in the HostVI.
@@ -311,8 +388,11 @@ In the HostVI, the part of separated channel imaging is packed as a SubVI, and t
 # Specification
 
 **Parameters**
+
 <**condition**>
+
 ***button***
+
 ++*.vi*++
 
 
