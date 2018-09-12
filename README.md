@@ -13,13 +13,14 @@ Before reading this documentation, there are some materials recommended.
  - [Creating FIFOs in FPGA VIs (FPGA Module)](http://zone.ni.com/reference/en-XX/help/371599P-01/lvfpgahelp/fpga_creating_fifos/)
  - [NI LabVIEW High-Performance FPGA Developer’s Guide](http://download.ni.com/pub/gdc/tut/labview_high-perf_fpga_v1.1.pdf)
  - [IMAQ Vision Concepts Manual (see Chapter 1, specifically)](http://www.ni.com/pdf/manuals/322916b.pdf)
+ - [APIs for DMD control (ALP4lib)](https://pypi.org/project/ALP4lib/0.0.3-2/#description)
 
 # Front Panel
 
-This is the front panel *(demo)* of our Two Photon Microscope.
+This is the front panel of our Two Photon Microscope.
 <div align=center>
 
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/FrontPane1l.JPG">
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/FrontPane1l.JPG">
 
 </div>
 
@@ -32,7 +33,7 @@ This is the front panel *(demo)* of our Two Photon Microscope.
 
 <div align=center>
 
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/DMDerr.JPG" width="50%" height="50%" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/DMDerr.JPG" width="50%" height="50%" />
 
 </div>
 
@@ -43,7 +44,7 @@ This is the front panel *(demo)* of our Two Photon Microscope.
 You can also see the functions of each module in the following table:
 
 <div align=center>
- 
+
 |<div align=center>Block</div> | <div align=center>Function</div> |
 | -------- | -------- |
 |<div align=center>Image</div>     |<div align=center> *Image display*</div>    |
@@ -61,7 +62,7 @@ This project uses Labview to control the whole system.
 
 
 <div align=center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/State_Conditions.JPG" width="80%" height="80%"/>
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/State_Conditions.JPG" width="80%" height="80%"/>
 
 <font size="2" font face="Times New Roman">Figure2 Condition Control of the Front Block</font>
 </div>
@@ -69,7 +70,7 @@ This project uses Labview to control the whole system.
 
 
 <div align=center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/Program_Flowchart.png" width="80%" height="80%"/>
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Program_Flowchart.png" width="80%" height="80%"/>
 
 <font size="2" font face="Times New Roman">Figure 3 Flow chart of the state transitions</font>
 </div>
@@ -90,7 +91,7 @@ The FPGA Program, namely ++*DMD_Control_PXI_Acq.vi*++, is estiblished for freque
 The FPGA program is a sequence structure consist of four frames. 
 
 <div align=center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/fpga.png" alt="Figure4 Entire condition of FPGA program" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/fpga.png" alt="Figure4 Entire condition of FPGA program" />
 <font size="2" font face="Times New Roman">Figure 4 Entirety of FPGA program</font>
 </div>
 
@@ -107,18 +108,18 @@ This program use first three frames to initialize the hardwares:
 ## Main Functions
 In the last frame of the sequence structure, two channels of analog signals from PMT are collected in the frequency of 80MHz. Data after calculation are transmitted in the frequency of 20KHz. This program also output a trigger rising edge for DMD in synchrony with data transmission.
 <div align=center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/TPMworkflow.PNG" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/TPMworkflow.PNG" />
 </div>
 
 The data opration will not begin before receiving signal from the host. In this program, **Freqency Division**(typically 4k) and **Abandoned Number**(typically 800) are set as the start signal. The signal receiving module is on the left of figure below:
 <div align=center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/hosttotarget.PNG"/>
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/hosttotarget.PNG"/>
 </div>
 
 Generate rising edge trigger for DMD.
 <div align=center>
 
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/trigger.PNG"/>
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/trigger.PNG"/>
 
 </div>
 
@@ -126,7 +127,7 @@ Generate rising edge trigger for DMD.
 The data acquisition, calculation, and transimission functions are realized below:
 <div align=center>
 
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/FPGAdata_opration.JPG" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/FPGAdata_opration.JPG" />
 
 </div>
 
@@ -144,7 +145,7 @@ Host Program is based on the Sequence Structure: **Parameters Initialization**, 
 
 
 <div align=center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/host_imaging.png" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/host_imaging.png" />
 <font size="2" font face="Times New Roman">Figure 6 Entirety of Host Program</font>
 </div>
 
@@ -154,10 +155,10 @@ Host Program is based on the Sequence Structure: **Parameters Initialization**, 
 
 <div align=center>
 
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/FPGA_init.JPG" />
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/DMD_init.JPG" />
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/Components_init.JPG" width="35%"/>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/path_init.JPG" width="50%"" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/FPGA_init.JPG" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/DMD_init.JPG" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Components_init.JPG" width="35%"/>
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/path_init.JPG" width="50%"" />
 
 <font size="2" font face="Times New Roman">Figure 7 Parameters Initialization</font>
 
@@ -172,10 +173,10 @@ There are 4 parts in this frame:
 
 ## Main Body
 
-
+### Condition Initialization
 
 <div align=center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/State_Change.JPG" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/State_Change.JPG" />
 <font size="2" font face="Times New Roman">Figure 8 parameters setting</font>
 </div>
 
@@ -231,29 +232,53 @@ break;
 end
 ```
 
+### Condition <**Imaging**>
+Condition Imaging is consist of 4 while loops: "Producer","Consumer","Error Check", and "Separate Channel".
+It will be too hard to read if explaining every detail in this manual. So there are some simplified chart for this **Producer&Consumer** structure.
 
-To simplify the program, the parameters (**RangeX**,**RangeY**,**RangeZ**,**StepX**,**StepY**,**StepZ**...) are packed into a cluster in Figure 8 and 9.
-
-<div align=center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/Parameters.JPG" />
-
-
-<font size="2" font face="Times New Roman">Figure 8 parameters setting</font>
-</div>
-
+#### Producer Loop
 
 <div align=center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/cluster.PNG" width="50%" />
-
-<font size="2" font face="Times New Roman">Figure 9 cluster</font>
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Producer.JPG" />
 </div>
 
+Simplified Chart：
+<div align=center>
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Producer_Chart.jpg" />
+</div>
+
+#### Consumer Loop
+<div align=center>
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Consumer.JPG" />
+</div>
+
+Simplified Chart：
+<div align=center>
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Consumer_Chart.jpg" />
+</div>
+
+#### Error Check
+<div align=center>
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Check.JPG" />
+</div>
+
+The Error Check Loop is just to be rigorous.
+
+#### Separate Channel
+<div align=center>
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/New_Window.JPG" />
+</div>
+
+This while loop is to control the window of separate-channel displaying. When ***New window*** button is clicked, there will be a new window screening two channels separately. The window will be closed when click the ***Stop*** button on the new window.
+
+### Other Conditions
+In other conditions such as <**No Sequence**> and <**Idle**>, the program only waits for button clicking. <**Loading**> and <**Projecting**> are the in same logic with the manual of [ALP4lib](https://pypi.org/project/ALP4lib/0.0.3-2/#description), which contains APIs to control the DMD.
 
 
 
 ## Two-Channel Pollen Imaging
 <div align=center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/Two_photon_imaging.png" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Two_photon_imaging.png" />
 
 <font size="2" font face="Times New Roman">Figure 10 Principle of Two-Channel Pollen Imaging </font>
 </div>
@@ -261,21 +286,21 @@ To simplify the program, the parameters (**RangeX**,**RangeY**,**RangeZ**,**Step
 Figure 10 shows the principle of the Two-Channel Pollen Imaging. The pollens put in a slide emit fluorescent after absorbing photon from laser. Fluorescent light is divided into 2 parts by wavelength. Each part is detected by a PMT. The data are input to the FPGA module and a figure then be obtained by Host Program.
 
 <div align=center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/DatabitFPGA.png" width="100%"/>
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/DatabitFPGA.png" width="100%"/>
 
 <font size="2" font face="Times New Roman">Figure 11 Data type in two-channel pollen imaging </font>
 </div>
 
 
 <div align=center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/RGBdata_storage.JPG" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/RGBdata_storage.JPG" />
 
 <font size="2" font face="Times New Roman">Figure 12 IMAQ RGB division  with bytes </font>
 </div>
 
 
 <div align=center>
-<img src="https://raw.githubusercontent.com/Gusy-0626/fig_TPM/master/Two_photon_imaging_program_structure.png" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Two_photon_imaging_program_structure.png" />
 
 <font size="2" font face="Times New Roman">Figure 12 Structure of Two-Channel Pollen Imaging Program</font>
 </div>
@@ -288,12 +313,6 @@ In the HostVI, the part of separated channel imaging is packed as a SubVI, and t
 **Parameters**
 <**condition**>
 ***button***
-++*file.vi*++
+++*.vi*++
 
 
-
-
-<div align=center>
-<img src="https://raw.githubusercontent.com/chenbx996/Documentation/master/1816330721.jpg" alt="Figure4 Entire condition of FPGA program" />
-<font size="2" font face=" New Roman">Figure 4 Entirety of FPGA program</font>
-</div>
