@@ -192,10 +192,7 @@ Host Program is based on the Sequence Structure: **Parameters Initialization**, 
 
 <div align=center>
 
-<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/FPGA_init.JPG" />
-<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/DMD_init.JPG" />
-<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Components_init.JPG" width="35%"/>
-<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/path_init.JPG" width="50%"" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Initialization.JPG" />
 
 <font size="2" font face="Times New Roman">Figure 12 Parameters Initialization </font>
 
