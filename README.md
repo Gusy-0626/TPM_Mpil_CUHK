@@ -192,7 +192,7 @@ Host Program is based on the Sequence Structure: **Parameters Initialization**, 
 
 <div align=center>
 
-<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Initialization.JPG" />
+<img src="https://raw.githubusercontent.com/Gusy-0626/TPM_Mpil_CUHK/master/Figures_for_Documentation/Initialization.jpg" />
 
 <font size="2" font face="Times New Roman">Figure 12 Parameters Initialization </font>
 
